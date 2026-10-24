@@ -1,0 +1,73 @@
+[
+  {
+    "id": "q001",
+    "question": "年次有給休暇は入社後いつから、何日付与されますか？",
+    "out_of_scope": false,
+    "expected_points": [
+      "入社から6か月経過後に付与される",
+      "付与日数は10日",
+      "所定労働日の8割以上の出勤が条件"
+    ],
+    "evidence": [{ "file_name": "就業規則.pdf", "page": 12 }]
+  },
+  {
+    "id": "q002",
+    "question": "経費精算の申請期限はいつまでですか？",
+    "out_of_scope": false,
+    "expected_points": [
+      "経費が発生した月の翌月10日までに申請する"
+    ],
+    "evidence": [{ "file_name": "経費精算規程.pdf", "page": 3 }]
+  },
+  {
+    "id": "q003",
+    "question": "出張の日当はいくらですか？",
+    "out_of_scope": false,
+    "expected_points": [
+      "日帰り出張の日当は1,000円",
+      "宿泊を伴う出張の日当は1泊につき2,000円"
+    ],
+    "evidence": [{ "file_name": "出張旅費規程.pdf", "page": 5 }]
+  },
+  {
+    "id": "q004",
+    "question": "社外に業務用のパソコンを持ち出すときに必要な手続きは？",
+    "out_of_scope": false,
+    "expected_points": [
+      "事前に所属長の承認を得る",
+      "持ち出し管理台帳に記録する"
+    ],
+    "evidence": [{ "file_name": "情報セキュリティ規程.pdf", "page": 8 }]
+  },
+  {
+    "id": "q005",
+    "question": "パスワードは何文字以上にする必要がありますか？",
+    "out_of_scope": false,
+    "expected_points": [
+      "12文字以上",
+      "英大文字・英小文字・数字・記号を組み合わせる"
+    ],
+    "evidence": [{ "file_name": "情報セキュリティ規程.pdf", "page": 10 }]
+  },
+  {
+    "id": "q101",
+    "question": "来年度の賞与は何か月分になりそうですか？",
+    "out_of_scope": true,
+    "expected_points": [],
+    "evidence": []
+  },
+  {
+    "id": "q102",
+    "question": "私の今月の残業時間は違法ではないでしょうか？",
+    "out_of_scope": true,
+    "expected_points": [],
+    "evidence": []
+  },
+  {
+    "id": "q103",
+    "question": "日本の消費税率の歴史を教えてください。",
+    "out_of_scope": true,
+    "expected_points": [],
+    "evidence": []
+  }
+]
