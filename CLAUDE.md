@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-社内文書検索AI（RAG）の MVP。MVP の機能はすべて実装済み（DB マイグレーション、取り込み、チャットAPI、認証、チャットUI、評価スクリプト）。ただし Supabase へのマイグレーション適用・実データでの動作確認・Vercel デプロイは未実施。以下の「Architecture」は承認済みの実装プラン。実装したらこの記述を実態に合わせて更新すること。
+社内文書検索AI（RAG）の MVP。MVP の機能はすべて実装済み（DB マイグレーション、取り込み、チャットAPI、認証、チャットUI、評価スクリプト）。Supabase（プロジェクト jissen3、東京）へ適用済み、サンプル PDF 5本を取り込み済み（評価: 正答率 90%）。GitHub: https://github.com/iru-heartbeat/rag-search-ai（公開）。Vercel 本番: https://rag-search-ai-five.vercel.app（main への push で自動デプロイ、リージョンは vercel.json の hnd1）。以下の「Architecture」は承認済みの実装プラン。実装したらこの記述を実態に合わせて更新すること。
 
 要件の正は要件定義書（Claude Docs: https://claude.ai/artifact/U18Uw9gJhDRKEMFeA6ni2k、1〜7章が確定、8〜9章は未記入）。プラン原本: `C:\Users\irunt\.claude\plans\virtual-tickling-lerdorf.md`。
 
