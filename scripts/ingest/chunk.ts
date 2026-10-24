@@ -2,9 +2,22 @@
 export const MIN_CHUNK_CHARS = 500;
 export const MAX_CHUNK_CHARS = 800;
 
-/** PDF 由来の余計な空白・空行を整える */
+/**
+ * NFKC で戻らない「CJK部首補助」の文字（U+2E80〜U+2EFF）と、対応する通常の漢字。
+ * PDF によっては「長」「民」などがこの部首用の文字として埋め込まれている。
+ */
+const CJK_RADICAL_SUPPLEMENT: Record<string, string> = {
+  "⺟": "母", "⺠": "民", "⻁": "虎", "⻄": "西", "⻆": "角", "⻑": "長",
+  "⻘": "青", "⻝": "食", "⻤": "鬼", "⻩": "黄", "⻭": "歯", "⻲": "亀",
+};
+
+/** PDF 由来の文字の揺れと、余計な空白・空行を整える */
 export function normalizeText(text: string): string {
   return text
+    // 「⽇」(U+2F47 康熙部首) → 「日」のように、見た目が同じ別の文字を通常の漢字にそろえる。
+    // そろえないと、普通の漢字で書かれた質問と一致せず検索精度が落ちる
+    .normalize("NFKC")
+    .replace(/[⺀-⻿]/g, (ch) => CJK_RADICAL_SUPPLEMENT[ch] ?? ch)
     .replace(/\r\n?/g, "\n")
     .replace(/[ \t　]+/g, " ") // 連続する空白（全角含む）を1つに
     .split("\n")
