@@ -1,0 +1,60 @@
+/* ログイン画面専用のスタイル（globals.css はチャットUIブランチの担当なので触らない） */
+
+.container {
+  max-width: 400px;
+  margin: 15vh auto 0;
+  padding: 0 16px;
+  font-family: system-ui, sans-serif;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0 0 8px;
+}
+
+.lead {
+  margin: 0 0 24px;
+  color: #555;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.button {
+  margin-top: 8px;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  margin: 8px 0;
+  color: #b91c1c;
+}
+
+.success {
+  line-height: 1.7;
+}
