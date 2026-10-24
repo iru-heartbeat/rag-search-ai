@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-社内文書検索AI（RAG）の MVP。実装済み: DB マイグレーション（`supabase/migrations/`、Supabase へは未適用）、取り込みスクリプト（`scripts/ingest/`）、チャットAPI（`src/app/api/chat/`）。未実装: 認証画面・Auth Hook、チャットUI、評価スクリプト。以下の「Architecture」は承認済みの実装プラン。実装したらこの記述を実態に合わせて更新すること。
+社内文書検索AI（RAG）の MVP。MVP の機能はすべて実装済み（DB マイグレーション、取り込み、チャットAPI、認証、チャットUI、評価スクリプト）。ただし Supabase へのマイグレーション適用・実データでの動作確認・Vercel デプロイは未実施。以下の「Architecture」は承認済みの実装プラン。実装したらこの記述を実態に合わせて更新すること。
 
 要件の正は要件定義書（Claude Docs: https://claude.ai/artifact/U18Uw9gJhDRKEMFeA6ni2k、1〜7章が確定、8〜9章は未記入）。プラン原本: `C:\Users\irunt\.claude\plans\virtual-tickling-lerdorf.md`。
 
@@ -34,7 +34,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commands
 
-`package.json` に定義済み（`scripts/eval/index.ts` は未作成）:
+`package.json` に定義済み:
 
 ```bash
 npm run dev      # Next.js 開発サーバー
