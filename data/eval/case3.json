@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c01",
+    "question": "有給休暇は入社何ヶ月後に何日付与されますか？",
+    "out_of_scope": false,
+    "expected_points": ["入社6ヶ月経過後に付与される", "付与日数は10日"],
+    "evidence": [{ "file_name": "case3-doc1-employment-rules.pdf", "page": 1 }]
+  },
+  {
+    "id": "c02",
+    "question": "経費精算の締め日と振込日はいつですか？",
+    "out_of_scope": false,
+    "expected_points": ["毎月末締め", "翌月10日までに申請する", "翌月25日に振り込まれる"],
+    "evidence": [{ "file_name": "case3-doc2-expense-manual.pdf", "page": 1 }]
+  },
+  {
+    "id": "c03",
+    "question": "リモートワークは週何日まで可能ですか？",
+    "out_of_scope": false,
+    "expected_points": ["週3日まで"],
+    "evidence": [{ "file_name": "case3-doc4-remote-work.pdf", "page": 1 }]
+  },
+  {
+    "id": "c04",
+    "question": "パスワードの最低文字数と変更頻度を教えてください。",
+    "out_of_scope": false,
+    "expected_points": ["12文字以上", "90日ごとに変更する", "過去3回分と同じパスワードは使えない"],
+    "evidence": [{ "file_name": "case3-doc3-security-policy.pdf", "page": 1 }]
+  },
+  {
+    "id": "c05",
+    "question": "在宅勤務手当はいくら支給されますか？",
+    "out_of_scope": false,
+    "expected_points": ["月額3,000円"],
+    "evidence": [
+      { "file_name": "case3-doc2-expense-manual.pdf", "page": 1 },
+      { "file_name": "case3-doc4-remote-work.pdf", "page": 1 }
+    ]
+  },
+  {
+    "id": "c06",
+    "question": "接待交際費の1人あたりの上限はいくらですか？",
+    "out_of_scope": false,
+    "expected_points": ["1人あたり5,000円", "超える場合は部門長の事前承認が必要"],
+    "evidence": [{ "file_name": "case3-doc2-expense-manual.pdf", "page": 1 }]
+  },
+  {
+    "id": "c07",
+    "question": "PCを紛失した場合、どこに何分以内に報告しますか？",
+    "out_of_scope": false,
+    "expected_points": ["情報システム部（security@techbridge.co.jp）へ報告する", "30分以内"],
+    "evidence": [{ "file_name": "case3-doc3-security-policy.pdf", "page": 1 }]
+  },
+  {
+    "id": "c08",
+    "question": "リモートワークのコアタイムは何時から何時ですか？",
+    "out_of_scope": false,
+    "expected_points": ["11:00〜15:00"],
+    "evidence": [{ "file_name": "case3-doc4-remote-work.pdf", "page": 1 }]
+  },
+  {
+    "id": "c09",
+    "question": "新しいツールのアカウントは申請からどのくらいで発行されますか？",
+    "out_of_scope": false,
+    "expected_points": ["上長の承認後", "情報システム部が2営業日以内に発行する"],
+    "evidence": [
+      { "file_name": "case3-doc5-it-onboarding.pdf", "page": 1 },
+      { "file_name": "case3-doc5-it-onboarding.pdf", "page": 2 }
+    ]
+  },
+  {
+    "id": "c10",
+    "question": "時間外労働の上限は月何時間・年何時間ですか？",
+    "out_of_scope": false,
+    "expected_points": ["36協定に基づく", "月45時間", "年360時間"],
+    "evidence": [{ "file_name": "case3-doc1-employment-rules.pdf", "page": 1 }]
+  },
+  {
+    "id": "c11",
+    "question": "育児休業の取得条件を教えてください。",
+    "out_of_scope": true,
+    "expected_points": [],
+    "evidence": []
+  },
+  {
+    "id": "c12",
+    "question": "退職金はいくらもらえますか？",
+    "out_of_scope": true,
+    "expected_points": [],
+    "evidence": []
+  }
+]

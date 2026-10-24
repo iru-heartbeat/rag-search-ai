@@ -6,9 +6,9 @@ import { answerQuestion, SearchError } from "@/lib/chat/answer";
 import { MAX_QUESTION_LENGTH } from "@/lib/chat/config";
 import { GenerationError } from "@/lib/chat/generate";
 
-// OpenAI / Anthropic SDK を使うので Node.js ランタイムで動かし、Supabase と同じ東京に置く
+// OpenAI / Anthropic SDK を使うので Node.js ランタイムで動かす。
+// 実行リージョン（Supabase と同じ東京 hnd1）は vercel.json の regions で指定している
 export const runtime = "nodejs";
-export const preferredRegion = "hnd1";
 
 type ErrorBody = { error: string };
 
