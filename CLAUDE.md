@@ -15,17 +15,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Parallel development (git worktree)
 
-3つの worktree で同時に開発している。各ブランチは**自分の担当パスだけ**を変更する（担当外のファイルは読むのは可、編集は不可）。
+3つの worktree で同時に開発している（第2ラウンド: 認証 / チャットUI / 評価）。各ブランチは**自分の担当パスだけ**を変更する（担当外のファイルは読むのは可、編集は不可）。
 
 | ブランチ | worktree | 担当パス |
 |---|---|---|
-| `feat/db-schema` | `../rag-wt-db` | `supabase/` |
-| `feat/ingest` | `../rag-wt-ingest` | `scripts/ingest/` |
-| `feat/chat-api` | `../rag-wt-chat` | `src/app/api/chat/`, `src/lib/chat/`, `src/lib/supabase/` |
+| `feat/auth` | `../rag-wt-auth` | `src/app/login/`, `src/app/auth/`, `src/proxy.ts`, `src/lib/supabase/`, `supabase/migrations/` の新規ファイル |
+| `feat/chat-ui` | `../rag-wt-ui` | `src/app/page.tsx`, `src/app/layout.tsx`, `src/app/globals.css`, `src/components/` |
+| `feat/eval` | `../rag-wt-eval` | `scripts/eval/`, `data/eval/` |
 
-- ブランチ間の取り決めは `src/lib/types.ts`（テーブル行・`match_chunks` の戻り値・API レスポンスの型）と `src/lib/embedding.ts`（埋め込み処理）。これらと CLAUDE.md・`package.json` は main でのみ変更する。変更が必要なら作業を止めてユーザーに相談する。
+ブランチ間の取り決め:
+- 型は `src/lib/types.ts`、埋め込みは `src/lib/embedding.ts`、RAG 本体は `src/lib/chat/answer.ts` の `answerQuestion(supabase, question)`。
+  - チャットAPI はログイン中ユーザーの Supabase クライアントを、評価スクリプトは service_role のクライアントを渡す。
+- 認証 ⇔ UI: 未ログインで `/` を開くと `/login` へリダイレクトする（`src/proxy.ts` が担当）。ログアウトは `<form action="/auth/signout" method="post">` で POST する（ルートは認証ブランチが作る）。`/api/*` はリダイレクトせず、route 側で 401 を返す。
+- UI ⇔ チャットAPI: `POST /api/chat` に `{ question }` を送り、`ChatResponse` を受け取る。エラー時は `{ error: string }`（400/401/403/500/502）。
+- 上記の共通ファイル、`src/app/api/chat/`、`src/lib/chat/`、CLAUDE.md、`package.json` は main でのみ変更する。変更が必要なら作業を止めてユーザーに相談する。
 - 各ブランチは単独で `npx tsc --noEmit` が通る状態でコミットする。
-- マージは main で `feat/db-schema` → `feat/ingest` → `feat/chat-api` の順に行う。
+- マージは main で `feat/auth` → `feat/chat-ui` → `feat/eval` の順に行う。
 
 ## Commands
 
